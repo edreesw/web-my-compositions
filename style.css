@@ -48,16 +48,22 @@ body {
     margin: 0 auto;
 }
 
+body a {
+    text-decoration: none;
+    color: var(--accent-primary);
+}
+
+body a:hover {
+    /*font-weight: bold;*/
+    text-decoration: underline;
+}
 /*Content Containers */
 
 
-#page-title {
+#page-title, #page-subtitle {
     text-align: center;
-    padding: 1rem;
     margin: 1rem;
 }
-
-
 
 
 #player-list-container {
