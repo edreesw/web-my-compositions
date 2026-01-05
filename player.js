@@ -97,5 +97,4 @@ function playSong() {
 }
 
 //generate song list on page upon first load
-console.log("HERE!"); 
 generateSongRows(musicList); 
