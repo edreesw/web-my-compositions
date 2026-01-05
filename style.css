@@ -1,0 +1,110 @@
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+html.dark {
+    --background-color: #181818; /*darker*/
+    --background-secondary-color: #373a3d; /*lighter*/
+    --accent-primary: #7f5af0; 
+    --font-color: #F2F2F2; 
+
+}
+
+html.light {
+    --background-color: #fffffe; 
+    --background-secondary-color: #dedede; 
+    --accent-primary: #6246ea; 
+    --font-color: #2b2c34; 
+}
+
+
+:root {
+    background-color: var(--background-color);
+    color: var(--font-color); 
+
+    scrollbar-gutter: stable both-edges;
+}
+
+
+p {
+    margin: 1.5rem 0 1.5rem;
+}
+
+
+body {
+    /*font-family: 'Courier New', Courier, monospace;*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+    /*font-family: -Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    line-height: 1.5;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*Content Containers */
+
+
+#page-title {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+
+
+#player-list-container {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+    max-height: 100vh;
+    width: 70%;
+
+    border: 2px solid var(--font-color);
+    border-radius: 4px;
+    overflow: auto; 
+
+    margin-bottom: 1rem;
+}
+
+#player {
+    border-bottom: 2px solid var(--font-color);
+    padding: 1rem;   
+}
+
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* scrollbar-gutter: stable both-edges; */
+}
+
+.song-row {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem; 
+
+}
+
+.song-row:hover {
+    background-color: var(--background-secondary-color);
+}
+
+audio {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    #player-list-container {
+        margin: 1rem;
+        width: 95%;
+    }
+}
