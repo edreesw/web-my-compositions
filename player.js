@@ -17,10 +17,16 @@
  
 const musicList = [
     {
-        title: "Rising Waltz (2021, Musescore MIDI)",
-        description: "My first serious attempt at writing something simple for the piano.",
-        link: "./public/music/Rising_Waltz_MIDI_2021_forwebsite.mp3",
-        loop: false
+        title: "Fast and Synthy (2026)",
+        description: "An attempt at something Mega Man-eque using Logic Pro's built in Synth tools.",
+        link: "./public/music/fast_synthy_reorder_gap_2026.mp3",
+        loop: true
+    },
+    {
+        title: "Triumphant Loop",
+        description: "Initial 4 bar idea was something I came up with in 2023 while playing around with an Orchestra plugin, and I added another 4 bars to make the loop in 2025.",
+        link: "./public/music/TriumphantIdea_May2023July2025_forwebsite.mp3",
+        loop: true
     },
     {
         title: "An October Haunting (2023)",
@@ -41,11 +47,11 @@ const musicList = [
         loop: false
     },
     {
-        title: "Triumphant Loop",
-        description: "Initial 4 bar idea was something I came up with in 2023 while playing around with an Orchestra plugin, and I added another 4 bars to make the loop in 2025.",
-        link: "./public/music/TriumphantIdea_May2023July2025_forwebsite.mp3",
-        loop: true
-    },
+        title: "Rising Waltz (2021, Musescore MIDI)",
+        description: "My first serious attempt at writing something simple for the piano.",
+        link: "./public/music/Rising_Waltz_MIDI_2021_forwebsite.mp3",
+        loop: false
+    }
 ];
 
 const songMap = new Map(); 
@@ -87,6 +93,7 @@ function updatePlayer(songObj) {
     playerSource.src = songObj.link; 
     playerDescription.innerHTML = songObj.description; 
     playerAudio.loop = songObj.loop; 
+    playerAudio.load(); 
 }
 
 function playSong() {
